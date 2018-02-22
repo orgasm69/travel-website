@@ -6,4 +6,4 @@ function Person(fullName, favColor) {
   }
 }
 
-console.log('Hello from Person.js');
+module.exports = Person;
