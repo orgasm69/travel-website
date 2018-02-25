@@ -5,6 +5,7 @@ var browserSync = require('browser-sync').create()
 gulp.task('watch', function() {
 
   browserSync.init({
+    tunnel: "cichy",
     notify: false,
     server: {
       baseDir: "app"
