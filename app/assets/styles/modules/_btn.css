@@ -15,7 +15,16 @@
     @mixin atSmall {
       font-size: 1.25rem;
     }
+  }
 
+  &--welcome {
+    background-color: #000000;
+    border: 1px solid;
+    width: 100%;
+    text-align: center;
+    font-size: 1.0rem;
+    font-weight: lighter;
+    letter-spacing: 7px;
   }
 
 }

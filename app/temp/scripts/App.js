@@ -11224,6 +11224,10 @@ var _Modal = __webpack_require__(7);
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
+var _Welcome = __webpack_require__(8);
+
+var _Welcome2 = _interopRequireDefault(_Welcome);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mobileMenu = new _MobileMenu2.default();
@@ -11234,6 +11238,10 @@ new _RevealOnScroll2.default((0, _jquery2.default)('.testimonial'), '60%');
 var stickyHeader = new _StickyHeader2.default();
 
 var modal = new _Modal2.default();
+
+var welcome = new _Welcome2.default();
+
+setTimeot(welcome, 10000);
 
 /***/ }),
 /* 3 */
@@ -11885,6 +11893,53 @@ var Modal = function () {
 }();
 
 exports.default = Modal;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Welcome = function () {
+  function Welcome() {
+    _classCallCheck(this, Welcome);
+
+    this.closeWelcomeButton = (0, _jquery2.default)('.btn--welcome');
+    this.welcome = (0, _jquery2.default)('.welcome');
+    this.events();
+  }
+
+  _createClass(Welcome, [{
+    key: 'events',
+    value: function events() {
+      this.closeWelcomeButton.click(this.closeWelcome.bind(this));
+    }
+  }, {
+    key: 'closeWelcome',
+    value: function closeWelcome() {
+      this.welcome.addClass('welcome__close');
+    }
+  }]);
+
+  return Welcome;
+}();
+
+exports.default = Welcome;
 
 /***/ })
 /******/ ]);
