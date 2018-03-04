@@ -11228,6 +11228,10 @@ var _Welcome = __webpack_require__(8);
 
 var _Welcome2 = _interopRequireDefault(_Welcome);
 
+var _Disclaimer = __webpack_require__(9);
+
+var _Disclaimer2 = _interopRequireDefault(_Disclaimer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mobileMenu = new _MobileMenu2.default();
@@ -11240,6 +11244,8 @@ var stickyHeader = new _StickyHeader2.default();
 var modal = new _Modal2.default();
 
 var welcome = new _Welcome2.default();
+
+var disclaimer = new _Disclaimer2.default();
 
 /***/ }),
 /* 3 */
@@ -11966,6 +11972,25 @@ var Welcome = function () {
 }();
 
 exports.default = Welcome;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Disclaimer = function Disclaimer() {
+  _classCallCheck(this, Disclaimer);
+};
 
 /***/ })
 /******/ ]);

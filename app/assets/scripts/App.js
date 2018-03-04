@@ -4,6 +4,7 @@ import $ from 'jquery';
 import StickyHeader from './modules/StickyHeader';
 import Modal from './modules/Modal';
 import Welcome from './modules/Welcome'
+import Disclaimer from './modules/Disclaimer';
 
 var mobileMenu = new MobileMenu();
 
@@ -15,3 +16,5 @@ var stickyHeader = new StickyHeader();
 var modal = new Modal();
 
 var welcome = new Welcome();
+
+var disclaimer = new Disclaimer();

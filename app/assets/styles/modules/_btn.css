@@ -43,4 +43,30 @@
     transition: all .3s ease-out;
   }
 
+  &--disclaimer-dismiss {
+    position: absolute;
+    padding: 0;
+    background-color: #FFF;
+    border: none;
+    color: $mainOrange;
+    font-weight: 400;
+    margin-left: auto;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+
+  &--disclaimer-certificate {
+    position: absolute;
+    padding: 0;
+    background-color: #FFF;
+    border: none;
+    color: $mainOrange;
+    font-weight: 400;
+    margin-left: auto;
+    bottom: 15px;
+    left: 15px;
+    cursor: pointer;
+  }
+
 }
