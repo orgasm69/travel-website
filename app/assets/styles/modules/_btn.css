@@ -34,9 +34,9 @@
   &--hidden {
     visibility: hidden;
     background-color: #FFF;
-    transform: scale(1);
+    transform: scale(1.6);
     opacity: 0;
-    transition: all .7s ease-out;
+    transition: all .9s ease-out;
   }
 
 }

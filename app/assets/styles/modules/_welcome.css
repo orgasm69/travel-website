@@ -60,11 +60,12 @@
   &--to-white {
     background-color: #FFF;
     opacity: 1;
-    transition: all 3s linear;
+    transition: all 2s ease-out;
   }
 
   &--fade {
     opacity: 0;
     transition: all 3s ease-out;
+    z-index: -1
   }
 }
