@@ -29,6 +29,10 @@
     opacity: 1;
     transform: scale(1);
     transition: all 1.2s ease-out;
+
+    &:hover {
+      background-color: #707070;
+    }
   }
 
   &--hidden {
