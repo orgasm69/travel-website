@@ -1,3 +1,73 @@
 .welcome-icons {
-  
+  position: absolute;
+  transform: scale(1.5);
+  transition: all .7s ease-out;
+  opacity: 1;
+
+  &--usa {
+
+    left: 0;
+    margin: 0;
+
+    @mixin atSmall {
+
+    left: 0;
+    margin: 0;
+
+    &:hover {
+      transform: scale(2);
+      cursor: pointer;
+    }
+  }
+  }
+
+  &--polish {
+
+    right: 0;
+    margin: 0;
+
+    @mixin atSmall {
+
+    right: 0;
+    margin: 0;
+
+    &:hover {
+      transform: scale(2);
+      cursor: pointer;
+    }
+  }
+  }
+
+  &--choosenEn {
+
+    transform: scale(1.5) translate3d(43px, 0px, 0px);
+
+    @mixin atSmall {
+
+    transform: scale(3) translate3d(48px, 0px, 0px);
+    padding: 0;
+  }
+  }
+
+  &--choosenPl {
+
+    right: 0;
+    transform: scale(1.5) translate3d(-45px, 0px, 0px);
+
+    @mixin atSmall {
+
+    right: 0;
+    margin: 0;
+    transform: scale(3) translate3d(-48px, 0px, 0px);
+    padding: 0;
+  }
+  }
+
+  &--hidden {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    padding: 0;
+  }
+
 }

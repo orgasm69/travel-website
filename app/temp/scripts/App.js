@@ -11241,8 +11241,6 @@ var modal = new _Modal2.default();
 
 var welcome = new _Welcome2.default();
 
-setTimeot(welcome, 10000);
-
 /***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -11921,18 +11919,46 @@ var Welcome = function () {
 
     this.closeWelcomeButton = (0, _jquery2.default)('.btn--welcome');
     this.welcome = (0, _jquery2.default)('.welcome');
+    this.flagEN = (0, _jquery2.default)('.welcome-icons--usa');
+    this.flagPL = (0, _jquery2.default)('.welcome-icons--polish');
     this.events();
   }
 
   _createClass(Welcome, [{
     key: 'events',
     value: function events() {
+      this.flagEN.click(this.selectEngLanguage.bind(this));
+      this.flagPL.click(this.selectPlLanguage.bind(this));
       this.closeWelcomeButton.click(this.closeWelcome.bind(this));
     }
   }, {
     key: 'closeWelcome',
     value: function closeWelcome() {
       this.welcome.addClass('welcome__close');
+      this.closeWelcomeButton.addClass('btn--hidden');
+      this.flagPL.addClass('welcome-icons--hidden');
+      this.flagEN.addClass('welcome-icons--hidden');
+
+      this.welcome.addClass('welcome--to-white').delay(3000).queue(function (next) {
+        (0, _jquery2.default)(this).addClass('welcome--fade');
+        next();
+      });
+    }
+  }, {
+    key: 'selectEngLanguage',
+    value: function selectEngLanguage() {
+      this.flagEN.addClass('welcome-icons--choosenEn');
+      this.flagPL.addClass('welcome-icons--hidden');
+      this.flagEN.removeClass('welcome-icons--usa');
+      this.closeWelcomeButton.removeClass('btn--hidden');
+    }
+  }, {
+    key: 'selectPlLanguage',
+    value: function selectPlLanguage() {
+      this.flagPL.addClass('welcome-icons--choosenPl');
+      this.flagEN.addClass('welcome-icons--hidden');
+      this.flagPL.removeClass('welcome-icons--polish');
+      this.closeWelcomeButton.removeClass('btn--hidden');
     }
   }]);
 

@@ -15,5 +15,3 @@ var stickyHeader = new StickyHeader();
 var modal = new Modal();
 
 var welcome = new Welcome();
-
-setTimeot(welcome, 10000);

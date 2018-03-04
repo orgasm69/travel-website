@@ -8,14 +8,41 @@
   z-index: 1000;
   visibility: visible;
   transform: scale(1);
-  transition: all 2s ease-out;
   opacity: 1;
+
+
+  &__flag-box {
+
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 45%;
+    width: 200px;
+    height: 75px;
+    margin: -50px 0 0 -100px;
+    z-index: 1005;
+
+
+    @mixin atSmall {
+
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 45%;
+    width: 350px;
+    height: 75px;
+    margin: -50px 0 0 -175px;
+    z-index: 1005;
+
+    }
+
+  }
 
   &__loader {
     display: block;
     position: relative;
     left: 50%;
-    top: 50%;
+    top: 60%;
     width: 200px;
     height: 50px;
     margin: -50px 0 0 -100px;
@@ -24,8 +51,20 @@
   }
 
   &__close {
-    visibility: hidden;
-    transform: scale(1.2);
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+    transition: all 1s ease-out;
+  }
+
+  &--to-white {
+    background-color: #FFF;
+    opacity: 1;
+    transition: all 3s linear;
+  }
+
+  &--fade {
     opacity: 0;
+    transition: all 3s ease-out;
   }
 }

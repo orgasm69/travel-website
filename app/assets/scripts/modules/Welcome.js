@@ -3,16 +3,47 @@ import $ from 'jquery';
 class Welcome {
   constructor() {
     this.closeWelcomeButton = $('.btn--welcome');
-    this.welcome = $('.welcome')
+    this.welcome = $('.welcome');
+    this.flagEN = $('.welcome-icons--usa');
+    this.flagPL = $('.welcome-icons--polish');
     this.events();
+
   }
 
   events() {
+    this.flagEN.click(this.selectEngLanguage.bind(this));
+    this.flagPL.click(this.selectPlLanguage.bind(this));
     this.closeWelcomeButton.click(this.closeWelcome.bind(this));
-  }
+    }
+
 
   closeWelcome() {
     this.welcome.addClass('welcome__close');
+    this.closeWelcomeButton.addClass('btn--hidden');
+    this.flagPL.addClass('welcome-icons--hidden');
+    this.flagEN.addClass('welcome-icons--hidden');
+
+    this.welcome.addClass('welcome--to-white')
+      .delay(3000)
+      .queue(function(next) {
+        $(this).addClass('welcome--fade');
+        next();
+      });
+
+  }
+
+  selectEngLanguage() {
+    this.flagEN.addClass('welcome-icons--choosenEn');
+    this.flagPL.addClass('welcome-icons--hidden');
+    this.flagEN.removeClass('welcome-icons--usa');
+    this.closeWelcomeButton.removeClass('btn--hidden');
+  }
+
+  selectPlLanguage() {
+    this.flagPL.addClass('welcome-icons--choosenPl');
+    this.flagEN.addClass('welcome-icons--hidden');
+    this.flagPL.removeClass('welcome-icons--polish');
+    this.closeWelcomeButton.removeClass('btn--hidden');
   }
 
 }
