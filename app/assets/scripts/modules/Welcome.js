@@ -24,7 +24,7 @@ class Welcome {
     this.flagEN.addClass('welcome-icons--hidden');
 
     this.welcome.addClass('welcome--to-white')
-      .delay(3000)
+      .delay(700)
       .queue(function(next) {
         $(this).addClass('welcome--fade');
         next();

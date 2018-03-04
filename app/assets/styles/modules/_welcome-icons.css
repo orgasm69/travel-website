@@ -1,7 +1,7 @@
 .welcome-icons {
   position: absolute;
   transform: scale(1.5);
-  transition: all .9s ease-out;
+  transition: all .3s ease-out;
   opacity: 1;
 
   &--usa {

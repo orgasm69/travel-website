@@ -11939,7 +11939,7 @@ var Welcome = function () {
       this.flagPL.addClass('welcome-icons--hidden');
       this.flagEN.addClass('welcome-icons--hidden');
 
-      this.welcome.addClass('welcome--to-white').delay(3000).queue(function (next) {
+      this.welcome.addClass('welcome--to-white').delay(700).queue(function (next) {
         (0, _jquery2.default)(this).addClass('welcome--fade');
         next();
       });
