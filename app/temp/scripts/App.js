@@ -11228,10 +11228,6 @@ var _Welcome = __webpack_require__(8);
 
 var _Welcome2 = _interopRequireDefault(_Welcome);
 
-var _Disclaimer = __webpack_require__(9);
-
-var _Disclaimer2 = _interopRequireDefault(_Disclaimer);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mobileMenu = new _MobileMenu2.default();
@@ -11244,8 +11240,6 @@ var stickyHeader = new _StickyHeader2.default();
 var modal = new _Modal2.default();
 
 var welcome = new _Welcome2.default();
-
-var disclaimer = new _Disclaimer2.default();
 
 /***/ }),
 /* 3 */
@@ -11915,6 +11909,10 @@ var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _Disclaimer = __webpack_require__(9);
+
+var _Disclaimer2 = _interopRequireDefault(_Disclaimer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11947,6 +11945,11 @@ var Welcome = function () {
 
       this.welcome.addClass('welcome--to-white').delay(700).queue(function (next) {
         (0, _jquery2.default)(this).addClass('welcome--fade');
+        next();
+      }).delay(2000).queue(function (next) {
+        var disclaimer = new _Disclaimer2.default();
+        disclaimer.events(disclaimer);
+        disclaimer.closeAll(disclaimer);
         next();
       });
     }
@@ -11998,7 +12001,11 @@ var Disclaimer = function () {
   function Disclaimer() {
     _classCallCheck(this, Disclaimer);
 
-    this.disclaimerBox = (0, _jquery2.default)('.disclaimer');
+    this.disclaimer = (0, _jquery2.default)('.disclaimer');
+    this.disclaimerBox = (0, _jquery2.default)('.disclaimer--box-hidden');
+    this.body = (0, _jquery2.default)('html, body');
+    this.certificateButton = (0, _jquery2.default)('.btn--disclaimer-certificate');
+    this.closeButton = (0, _jquery2.default)('.btn--disclaimer-dismiss');
     this.events();
   }
 
@@ -12006,13 +12013,51 @@ var Disclaimer = function () {
     key: 'events',
     value: function events() {
       this.showDisclaimer();
+      this.showDisclaimerBox();
+      this.scrollDisable();
+
       console.log(this);
+    }
+  }, {
+    key: 'closeAll',
+    value: function closeAll() {
+      this.closeButton.click(this.hideAll.bind(this), this.scrollEnable.bind(this));
     }
   }, {
     key: 'showDisclaimer',
     value: function showDisclaimer() {
-      this.disclaimerBox.removeClass('disclaimer-box-hidden');
-      this.disclaimerBox.addClass('disclaimer-is-visible');
+      this.disclaimer.removeClass('disclaimer--hidden');
+      this.disclaimer.addClass('disclaimer--is-visible');
+    }
+  }, {
+    key: 'showDisclaimerBox',
+    value: function showDisclaimerBox() {
+      this.disclaimerBox.removeClass('disclaimer--box-hidden');
+      this.disclaimerBox.addClass('disclaimer--box');
+    }
+  }, {
+    key: 'hideAll',
+    value: function hideAll() {
+      this.disclaimer.addClass('disclaimer--hidden');
+      this.disclaimer.removeClass('disclaimer--is-visible');
+      this.disclaimerBox.addClass('disclaimer--box-hidden');
+      this.disclaimerBox.removeClass('disclaimer--box');
+    }
+  }, {
+    key: 'scrollDisable',
+    value: function scrollDisable() {
+      this.body.css({
+        overflow: 'hidden',
+        height: '100%'
+      });
+    }
+  }, {
+    key: 'scrollEnable',
+    value: function scrollEnable() {
+      this.body.css({
+        overflow: 'auto',
+        height: 'auto'
+      });
     }
   }]);
 

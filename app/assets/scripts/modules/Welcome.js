@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Disclaimer from './Disclaimer';
 
 class Welcome {
   constructor() {
@@ -28,9 +29,17 @@ class Welcome {
       .queue(function(next) {
         $(this).addClass('welcome--fade');
         next();
+      }) 
+      .delay(2000)
+      .queue(function(next) {
+        let disclaimer = new Disclaimer();
+        disclaimer.events(disclaimer);
+        disclaimer.closeAll(disclaimer);
+        next();
       });
+    }      
 
-  }
+  
 
   selectEngLanguage() {
     this.flagEN.addClass('welcome-icons--choosenEn');
