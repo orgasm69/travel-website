@@ -9,12 +9,12 @@
   left: 0;
   visibility: visible;
 
-  &-is--visible {
+  &-is-visible {
     opacity: 1;
     z-index: 7;
   }
 
-  /* &-box-hidden {
+  &-box-hidden {
     display: block;
     visibility: visible;
     position: fixed;
@@ -25,9 +25,11 @@
     border-radius: 30px;
     background-color: #FFF;
     margin-left: auto;
-    margin-right: auto; */
+    margin-right: auto;
+  }
+  
 
-  &-box {
+  &--box {
     display: block;
     position: fixed;
     bottom: 0;
@@ -35,21 +37,20 @@
     height: auto;
     border-top: $mainOrange 3px solid;
     background-color: #FFF;
+    
 
-
-  @mixin atMedium {
-    display: block;
-    visibility: visible;
-    position: relative;
-    top: 10%;
-    width: 500px;
-    height: 600px;
-    border: $mainOrange 3px solid;
-    border-radius: 30px;
-    background-color: #FFF;
-    margin-left: auto;
-    margin-right: auto;
-
+    @mixin atMedium {
+      display: block;
+      visibility: visible;
+      position: relative;
+      top: 10%;
+      width: 500px;
+      height: 600px;
+      border: $mainOrange 3px solid;
+      border-radius: 30px;
+      background-color: #FFF;
+      margin-left: auto;
+      margin-right: auto;
     }
 
   }
@@ -61,10 +62,11 @@
     padding-left: 15px;
     padding-top: 10px;
     padding-bottom: 50px;
+    
 
     @mixin atSmall {
       font-size: 1.125rem;
-      padding-top: 1px;
+      padding-top: 1px; 
     }
 }
 
