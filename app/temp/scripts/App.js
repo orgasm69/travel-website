@@ -11909,13 +11909,11 @@ var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _Disclaimer = __webpack_require__(9);
-
-var _Disclaimer2 = _interopRequireDefault(_Disclaimer);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+// import Disclaimer from './Disclaimer';
 
 var Welcome = function () {
   function Welcome() {
@@ -11946,12 +11944,16 @@ var Welcome = function () {
       this.welcome.addClass('welcome--to-white').delay(700).queue(function (next) {
         (0, _jquery2.default)(this).addClass('welcome--fade');
         next();
-      }).delay(2000).queue(function (next) {
-        var disclaimer = new _Disclaimer2.default();
-        disclaimer.events(disclaimer);
-        disclaimer.closeAll(disclaimer);
-        next();
-      });
+      }).delay(2000);
+      // .queue(function(next) {
+      //   let disclaimer = new Disclaimer();
+      //   console.log(this);
+
+      //   // disclaimer.events(disclaimer);
+      //   disclaimer.closeAll();
+
+      //   next();
+      // });
     }
   }, {
     key: 'selectEngLanguage',
@@ -11975,96 +11977,6 @@ var Welcome = function () {
 }();
 
 exports.default = Welcome;
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Disclaimer = function () {
-  function Disclaimer() {
-    _classCallCheck(this, Disclaimer);
-
-    this.disclaimer = (0, _jquery2.default)('.disclaimer');
-    this.disclaimerBox = (0, _jquery2.default)('.disclaimer--box-hidden');
-    this.body = (0, _jquery2.default)('html, body');
-    this.certificateButton = (0, _jquery2.default)('.btn--disclaimer-certificate');
-    this.closeButton = (0, _jquery2.default)('.btn--disclaimer-dismiss');
-    this.events();
-  }
-
-  _createClass(Disclaimer, [{
-    key: 'events',
-    value: function events() {
-      this.showDisclaimer();
-      this.showDisclaimerBox();
-      this.scrollDisable();
-
-      console.log(this);
-    }
-  }, {
-    key: 'closeAll',
-    value: function closeAll() {
-      this.closeButton.click(this.hideAll.bind(this), this.scrollEnable.bind(this));
-    }
-  }, {
-    key: 'showDisclaimer',
-    value: function showDisclaimer() {
-      this.disclaimer.removeClass('disclaimer--hidden');
-      this.disclaimer.addClass('disclaimer--is-visible');
-    }
-  }, {
-    key: 'showDisclaimerBox',
-    value: function showDisclaimerBox() {
-      this.disclaimerBox.removeClass('disclaimer--box-hidden');
-      this.disclaimerBox.addClass('disclaimer--box');
-    }
-  }, {
-    key: 'hideAll',
-    value: function hideAll() {
-      this.disclaimer.addClass('disclaimer--hidden');
-      this.disclaimer.removeClass('disclaimer--is-visible');
-      this.disclaimerBox.addClass('disclaimer--box-hidden');
-      this.disclaimerBox.removeClass('disclaimer--box');
-    }
-  }, {
-    key: 'scrollDisable',
-    value: function scrollDisable() {
-      this.body.css({
-        overflow: 'hidden',
-        height: '100%'
-      });
-    }
-  }, {
-    key: 'scrollEnable',
-    value: function scrollEnable() {
-      this.body.css({
-        overflow: 'auto',
-        height: 'auto'
-      });
-    }
-  }]);
-
-  return Disclaimer;
-}();
-
-exports.default = Disclaimer;
 
 /***/ })
 /******/ ]);

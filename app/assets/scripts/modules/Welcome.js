@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Disclaimer from './Disclaimer';
+// import Disclaimer from './Disclaimer';
 
 class Welcome {
   constructor() {
@@ -31,12 +31,15 @@ class Welcome {
         next();
       }) 
       .delay(2000)
-      .queue(function(next) {
-        let disclaimer = new Disclaimer();
-        disclaimer.events(disclaimer);
-        disclaimer.closeAll(disclaimer);
-        next();
-      });
+      // .queue(function(next) {
+      //   let disclaimer = new Disclaimer();
+      //   console.log(this);
+        
+      //   // disclaimer.events(disclaimer);
+      //   disclaimer.closeAll();
+        
+      //   next();
+      // });
     }      
 
   
